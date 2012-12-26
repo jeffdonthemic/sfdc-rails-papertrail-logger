@@ -1,19 +1,3 @@
-
-git clone
-bundle install
-
-PushTopic pushTopic = new PushTopic();
-pushTopic.ApiVersion = 26.0;
-pushTopic.Name = 'LogEntries';
-pushTopic.Description = 'All new logger records';
-pushtopic.Query = 'select id, name, level__c, short_message__c, class__c from log__c';
-pushTopic.NotifyForOperations = 'create';
-pushTopic.NotifyForFields = 'All';
-insert pushTopic;
-
-Setup oauth
-
-
 # sfdc-rails-papertrail-logger
 
 Ruby on Rails application using [Restforce](https://github.com/ejholmes/restforce) that catches streamed records from salesforce and logs them via [Papertrail](http://www.papertrailapp.com).
@@ -50,7 +34,7 @@ From the command line type in:
 	cd sfdc-rails-papertrail-logger
 	bundle install
 
-This will clone this repo locally so you simply have to make your config changes and be up and running. You should have the [Heroku Toolbelt](https://toolbelt.heroku.com) installed so that you an start the app using Foreman with the same environment as Heroku. Create '.env' in your root directory and add your OAuth configuration for the application. Don't forget to add this file to '.gitignore' so that your variables are exposed.
+This will clone this repo locally so you simply have to make your config changes and be up and running. You should have the [Heroku Toolbelt](https://toolbelt.heroku.com) installed so that you can start the app using Foreman with the same environment as Heroku. Create an '.env' file in your root directory and add your OAuth configuration for the application. Don't forget to add this file to '.gitignore' so that your variables are exposed.
 
 	SFDC_USERNAME=[YOUR-SFDC-USERNAME]
 	SFDC_PASSWORD=[YOUR-SFDC-PASSWORD]
@@ -62,18 +46,19 @@ Start the application by running 'foreman start -p 3000' and then point your bro
 
 ### Deploy to Heroku
 
-<pre>heroku create sfdc-papertrail-logger
+	heroku create sfdc-rails-papertrail-logger
 
-heroku config:add CLIENT_ID=YOUR-SALESFORCE-CLIENT-ID
-heroku config:add CLIENT_SECRET=YOUR-SALESFORCE-SECRET
-heroku config:add USERNAME=YOUR-SALESFORCE-USERNAME
-heroku config:add PASSWORD=YOUR-SALESFORCE-PASSWORD-AND-TOKEN
+	heroku config:add SFDC_USERNAME=[YOUR-SFDC-USERNAME]
+	heroku config:add SFDC_PASSWORD=[YOUR-SFDC-PASSWORD]
+	heroku config:add SFDC_SECURITY_TOKEN=[YOUR-USER-SECURITY-TOKEN]
+	heroku config:add SFDC_CLIENT_ID=[REMOTE-ACCESS-CONSUMER-KEY]
+	heroku config:add SFDC_CLIENT_SECRET=[REMOTE-ACCESS-CONSUMER-SECRET]
 
-git push heroku master</pre>
+	git push heroku master
 
 Add the Papertrail add-on from the app in Heroku or with:
 
-<pre>heroku addons:add papertrail:choklad</pre>
+	heroku addons:add papertrail:choklad
 
 Open Papertrail from the app on Heroku in the upper right "Add-ons" menu.
 
