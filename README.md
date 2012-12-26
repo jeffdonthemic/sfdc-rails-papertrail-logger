@@ -45,13 +45,17 @@ You can also set up PushTopics using the [Workbench](https://workbench.developer
 ### Running the Application Locally
 
 From the command line type in:
-<pre>git clone https://github.com/jeffdonthemic/sfdc-papertrail-logger.git</pre>
+	git clone https://github.com/jeffdonthemic/sfdc-rails-papertrail-logger.git
 
-This will clone this repo locally so you simply have to make your config changes and be up and running. Now replace your OAuth tokens and credentials in the config.js file.
+This will clone this repo locally so you simply have to make your config changes and be up and running. You should have the [Heroku Toolbelt](https://toolbelt.heroku.com) installed so that you an start the app using Foreman with the same environment as Heroku. Create '.env' in your root directory and add the OAuth configuration for the application. Don't forget to add this file to '.gitignore' so that your variables are exposed.
 
-<pre>cd sfdc-papertrail-logger
-npm install # install all of the packages from the package.json file
-node app.js # start the server</pre>
+	SFDC_USERNAME=[YOUR-SFDC-USERNAME]
+	SFDC_PASSWORD=[YOUR-SFDC-PASSWORD]
+	SFDC_SECURITY_TOKEN=[YOUR-USER-SECURITY-TOKEN]
+	SFDC_CLIENT_ID=[REMOTE-ACCESS-CONSUMER-KEY]
+	SFDC_CLIENT_SECRET=[REMOTE-ACCESS-CONSUMER-SECRET]
+
+
 
 Point your browser to [http://localhost:3001](http://localhost:3001) and watch the magic!
 
