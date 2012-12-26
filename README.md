@@ -64,3 +64,5 @@ Open Papertrail by clicking on "Papertrail Choklad" from the Heroku Resources pa
 
 Now adding records to the Log__c custom object will show up in Papertrail!
 
+One thing to remember is that Heroku will shut down your app after an hour of inactivity if you only have one dyno configured. So, to keep this app running and listening for event records, you will have to scale it to 2 dynos.
+
