@@ -60,7 +60,7 @@ Add the Papertrail add-on from the app in Heroku or with:
 
 	heroku addons:add papertrail:choklad
 
-Open Papertrail from the app on Heroku in the upper right "Add-ons" menu.
+Open Papertrail by clicking on "Papertrail Choklad" from the Heroku Resources page for the application.
 
 Now adding records to the Log__c custom object will show up in Papertrail!
 
