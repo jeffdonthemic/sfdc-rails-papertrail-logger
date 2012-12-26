@@ -62,3 +62,5 @@ Add the Papertrail add-on from the app in Heroku or with:
 
 Open Papertrail from the app on Heroku in the upper right "Add-ons" menu.
 
+Now adding records to the Log__c custom object will show up in Papertrail!
+
