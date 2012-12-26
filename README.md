@@ -42,7 +42,7 @@ This will clone this repo locally so you simply have to make your config changes
 	SFDC_CLIENT_ID=[REMOTE-ACCESS-CONSUMER-KEY]
 	SFDC_CLIENT_SECRET=[REMOTE-ACCESS-CONSUMER-SECRET]
 
-Start the application by running 'foreman start -p 3000' and then point your browser to [http://localhost:3000](http://localhost:3000). Log into Salesforce and manually add a new Log__c record and watch the magic!
+Start the application by running 'foreman start -p 3000' and then point your browser to [http://localhost:3000](http://localhost:3000). Log into Salesforce and manually add a new Log__c record and watch the magic as log records appear in the terminal!
 
 ### Deploy to Heroku
 
