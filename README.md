@@ -45,9 +45,12 @@ You can also set up PushTopics using the [Workbench](https://workbench.developer
 ### Running the Application Locally
 
 From the command line type in:
-	git clone https://github.com/jeffdonthemic/sfdc-rails-papertrail-logger.git
 
-This will clone this repo locally so you simply have to make your config changes and be up and running. You should have the [Heroku Toolbelt](https://toolbelt.heroku.com) installed so that you an start the app using Foreman with the same environment as Heroku. Create '.env' in your root directory and add the OAuth configuration for the application. Don't forget to add this file to '.gitignore' so that your variables are exposed.
+	git clone https://github.com/jeffdonthemic/sfdc-rails-papertrail-logger.git
+	cd sfdc-rails-papertrail-logger
+	bundle install
+
+This will clone this repo locally so you simply have to make your config changes and be up and running. You should have the [Heroku Toolbelt](https://toolbelt.heroku.com) installed so that you an start the app using Foreman with the same environment as Heroku. Create '.env' in your root directory and add your OAuth configuration for the application. Don't forget to add this file to '.gitignore' so that your variables are exposed.
 
 	SFDC_USERNAME=[YOUR-SFDC-USERNAME]
 	SFDC_PASSWORD=[YOUR-SFDC-PASSWORD]
@@ -55,9 +58,7 @@ This will clone this repo locally so you simply have to make your config changes
 	SFDC_CLIENT_ID=[REMOTE-ACCESS-CONSUMER-KEY]
 	SFDC_CLIENT_SECRET=[REMOTE-ACCESS-CONSUMER-SECRET]
 
-
-
-Point your browser to [http://localhost:3001](http://localhost:3001) and watch the magic!
+Start the application by running 'foreman start -p 3000' and then point your browser to [http://localhost:3000](http://localhost:3000). Log into Salesforce and manually add a new Log__c record and watch the magic!
 
 ### Deploy to Heroku
 
