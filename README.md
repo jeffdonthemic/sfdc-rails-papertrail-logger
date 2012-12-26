@@ -30,7 +30,7 @@ Setup a new Remote Access to get your OAuth tokens. If you are unfamiliar with s
 
 Create a new PushTopic from the Developer Console in your org with the following. This will setup the endpoint for faye to listen to:
 
-PushTopic pt = new PushTopic();  
+'PushTopic pt = new PushTopic();  
 pt.apiversion = 26.0;  
 pt.name = 'LogEntries';
 pt.description = 'All new logger records';  
@@ -38,7 +38,7 @@ pt.query = 'select id, name, level__c, short_message__c, class__c from log__c';
 pt.notifyforoperations = 'create';
 pt.notifyforfields = 'All'; 
 insert pt;  
-System.debug('Created new PushTopic: '+ pt.Id);
+System.debug('Created new PushTopic: '+ pt.Id);'
 
 You can also set up PushTopics using the [Workbench](https://workbench.developerforce.com).
 
